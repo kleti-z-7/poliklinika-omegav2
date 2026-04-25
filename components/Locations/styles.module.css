@@ -1,0 +1,244 @@
+.locations {
+  padding: 72px 32px 64px;
+  position: relative;
+  overflow: hidden;
+  background: var(--c-navy-mid);
+}
+
+.locations::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(91,143,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91,143,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  pointer-events: none;
+}
+.locations::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 50%, rgba(30,86,208,0.1), transparent),
+    radial-gradient(ellipse 50% 50% at 80% 30%, rgba(91,143,255,0.07), transparent);
+  pointer-events: none;
+}
+
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.locationsHeader {
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+/* loc-card and loc-card-inner are queried by useLocationTilt hook — must be global */
+:global(.loc-card) {
+  perspective: 900px;
+  cursor: pointer;
+}
+
+:global(.loc-card-inner) {
+  background: linear-gradient(150deg, rgba(13,50,128,0.7) 0%, rgba(7,29,78,0.85) 100%);
+  border: 1px solid rgba(91,143,255,0.12);
+  border-radius: 20px;
+  padding: 24px 22px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition:
+    border-color 0.4s,
+    box-shadow 0.4s,
+    transform 0.08s linear;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.loc-card-inner)::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(91,143,255,0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+:global(.loc-card):hover :global(.loc-card-inner)::before { opacity: 1; }
+
+:global(.loc-card-inner)::after {
+  content: '';
+  position: absolute;
+  top: var(--my, 50%);
+  left: var(--mx, 50%);
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(91,143,255,0.1), transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+:global(.loc-card):hover :global(.loc-card-inner)::after { opacity: 1; }
+
+:global(.loc-pin) {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(91,143,255,0.1);
+  border: 1px solid rgba(91,143,255,0.2);
+  border-radius: 50%;
+  color: var(--c-liquid);
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s, background 0.3s;
+}
+:global(.loc-pin svg) { width: 14px; height: 14px; }
+:global(.loc-card):hover :global(.loc-pin) {
+  opacity: 1;
+  background: rgba(91,143,255,0.2);
+  transform: translateY(-2px) scale(1.1);
+}
+
+:global(.loc-card):hover :global(.loc-card-inner) {
+  border-color: rgba(91,143,255,0.3);
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(91,143,255,0.15) inset,
+    0 0 60px rgba(30,86,208,0.1);
+}
+:global(.loc-card.loc-primary .loc-card-inner) {
+  border-color: rgba(91,143,255,0.22);
+  background: linear-gradient(150deg, rgba(20,60,160,0.65), rgba(10,35,100,0.8));
+}
+:global(.loc-card.loc-primary):hover :global(.loc-card-inner) {
+  border-color: rgba(91,143,255,0.45);
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(91,143,255,0.25) inset,
+    0 0 80px rgba(30,86,208,0.14);
+}
+
+:global(.loc-badge-slot) {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+:global(.loc-badge) {
+  font-family: var(--f-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-liquid);
+  background: rgba(91,143,255,0.1);
+  border: 1px solid rgba(91,143,255,0.25);
+  border-radius: 20px;
+  padding: 3px 10px;
+  display: inline-block;
+}
+:global(.loc-card h4) {
+  font-family: var(--f-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--c-white);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+:global(.loc-card address) {
+  font-size: 12px;
+  color: var(--c-silver-dim);
+  margin-bottom: 0;
+  font-style: normal;
+  letter-spacing: 0.01em;
+}
+:global(.loc-hours-wrap) {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 28px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(91,143,255,0.1);
+}
+:global(.loc-hours) {
+  display: flex;
+  align-items: center;
+}
+:global(.loc-hours-text) {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-silver-dim);
+}
+:global(.loc-card .btn-ghost) {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 13px 20px;
+}
+
+.homeVisit {
+  background: linear-gradient(135deg, rgba(30,86,208,0.14), rgba(11,42,107,0.1));
+  border: 1px solid rgba(91,143,255,0.18);
+  border-radius: var(--r-card);
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.homeVisit:hover {
+  border-color: rgba(91,143,255,0.32);
+  box-shadow: 0 0 48px rgba(30,86,208,0.08);
+}
+
+.hvIcon {
+  color: var(--c-liquid);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+.hvIcon svg { width: 48px; height: 48px; }
+
+.hvText { flex: 1; }
+.hvText h4 {
+  font-family: var(--f-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--c-white);
+  margin-bottom: 8px;
+}
+.hvText p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--c-silver);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .homeVisit { flex-direction: column; text-align: center; padding: 32px; }
+}
+@media (max-width: 640px) {
+  .locations { padding: 80px 20px; }
+  .grid { grid-template-columns: 1fr; }
+}

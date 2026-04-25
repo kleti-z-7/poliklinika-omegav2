@@ -1,0 +1,52 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--c-navy-deep);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s var(--ease-out-expo), visibility 0.7s;
+}
+
+/* loader--done is toggled by useLoader hook via getElementById — must be global */
+:global(.loader--done) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.mark {
+  width: 220px;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  animation: breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.04); }
+}
+
+.bar {
+  width: 220px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-blue), var(--c-liquid));
+  width: 0%;
+  transition: width 0.05s linear;
+}

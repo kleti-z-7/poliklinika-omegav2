@@ -1,0 +1,202 @@
+.services {
+  padding: 64px 32px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.shell {
+  margin-top: 48px;
+  border: 1px solid rgba(91,143,255,0.14);
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(8,28,88,0.7), rgba(4,14,50,0.9));
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(91,143,255,0.12);
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 12px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid rgba(91,143,255,0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+  color: inherit;
+}
+.tab:last-child { border-right: none; }
+.tab:hover { background: rgba(91,143,255,0.06); }
+
+.tabActive {
+  background: rgba(91,143,255,0.12);
+  box-shadow: inset 0 -2px 0 var(--c-liquid);
+}
+
+.tabNum {
+  font-family: var(--f-mono);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: var(--c-liquid);
+  opacity: 0.6;
+}
+.tabActive .tabNum { opacity: 1; }
+
+.tabLabel {
+  font-family: var(--f-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-silver-dim);
+  letter-spacing: 0.01em;
+}
+.tabActive .tabLabel { color: var(--c-white); }
+
+.panel {
+  display: flex;
+  gap: 0;
+  min-height: 340px;
+  animation: panelIn 0.4s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panelLeft {
+  flex: 1;
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-right: 1px solid rgba(91,143,255,0.1);
+}
+
+.panelRight {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelIcon {
+  width: 48px; height: 48px;
+  color: var(--c-liquid);
+  margin-bottom: 20px;
+}
+.panelIcon svg { width: 100%; height: 100%; }
+
+.panelTitle {
+  font-family: var(--f-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--c-white);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.panelDesc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--c-silver);
+  margin-bottom: 20px;
+}
+
+.panelTurnaround {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--c-silver-dim);
+  margin-bottom: 10px;
+}
+.panelTurnaround svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+.panelNote {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  color: rgba(160,180,220,0.45);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.panelStat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.statVal {
+  font-family: var(--f-display);
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--c-white);
+  letter-spacing: -0.03em;
+}
+
+.statLbl {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-silver-dim);
+}
+
+.panelTests {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.testItem {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--c-silver);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.testItem:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+
+.itemCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--c-liquid);
+  letter-spacing: 0.04em;
+  transition: color 0.2s, gap 0.2s;
+  margin-top: auto;
+}
+.itemCta:hover { color: var(--c-white); gap: 12px; }
+.itemCta svg { width: 16px; height: 16px; }
+
+@media (max-width: 900px) {
+  .panel { flex-direction: column; }
+  .panelLeft { border-right: none; border-bottom: 1px solid rgba(91,143,255,0.1); }
+  .panelRight { width: 100%; }
+  .panelTests { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .testItem { border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 4px 10px; }
+  .testItem:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+}
+@media (max-width: 640px) {
+  .services { padding: 80px 20px; }
+}
+@media (max-width: 600px) {
+  .tabs { flex-wrap: wrap; }
+  .tab { flex: 1 1 33%; }
+}
