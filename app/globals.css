@@ -20,9 +20,14 @@
   --c-glow:          rgba(91,143,255,0.16);
 
   /* Typography */
-  --f-display: 'Archivo', 'Archivo Expanded', system-ui, sans-serif;
-  --f-body:    'Archivo', system-ui, sans-serif;
-  --f-mono:    'Space Mono', 'Courier New', monospace;
+  --font-main: var(--font-archivo), 'Archivo', sans-serif;
+  --font-wide: 'Archivo Expanded', 'Archivo Wide', 'Archivo', sans-serif;
+  --ls-wide:   0.18em;
+
+  /* Legacy aliases — keep for component CSS modules */
+  --f-display: var(--font-main);
+  --f-body:    var(--font-main);
+  --f-mono:    var(--font-wide);
 
   /* Scale */
   --nav-h:  64px;
@@ -38,6 +43,7 @@
 
 /* ── RESET ───────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+em, i { font-style: normal; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
   background: var(--c-navy);

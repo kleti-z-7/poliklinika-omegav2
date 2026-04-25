@@ -48,7 +48,7 @@
   letter-spacing: -0.02em;
 }
 :global(.section-title em) {
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--c-liquid-glow);
 }
@@ -208,7 +208,7 @@
 /* cred-wall, cred-slab, cred-slab-foil, cred-revealed queried by useCredWall — global */
 :global(.cred-wall) {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1.35fr;
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   align-items: stretch;
   min-height: 380px;
@@ -404,7 +404,7 @@
     rgba(91,143,255,0.05) 100%
   );
 }
-:global(.cred-slab--anchor .cred-slab-title) { font-size: clamp(18px, 1.8vw, 24px); }
+:global(.cred-slab--anchor .cred-slab-title) { font-size: clamp(16px, 1.5vw, 20px); }
 
 :global(.cred-anchor-seal) {
   position: relative;
@@ -439,7 +439,7 @@
   .divider { display: none; }
   .item { border-bottom: 1px solid var(--c-border); padding-bottom: 24px; }
   :global(.cred-wall) { grid-template-columns: repeat(3, 1fr); min-height: auto; }
-  :global(.cred-slab--anchor) { grid-column: span 2; }
+  :global(.cred-slab--anchor) { grid-column: auto; }
 }
 @media (max-width: 900px) {
   .inner { grid-template-columns: repeat(3, 1fr); }

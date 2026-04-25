@@ -20,9 +20,14 @@
   --c-glow:          rgba(91,143,255,0.16);
 
   /* Typography */
-  --f-display: 'Archivo', 'Archivo Expanded', system-ui, sans-serif;
-  --f-body:    'Archivo', system-ui, sans-serif;
-  --f-mono:    'Space Mono', 'Courier New', monospace;
+  --font-main: var(--font-archivo), 'Archivo', sans-serif;
+  --font-wide: 'Archivo Wide', sans-serif;
+  --ls-wide:   0.06em;
+
+  /* Legacy aliases — keep for component CSS modules */
+  --f-display: var(--font-main);
+  --f-body:    var(--font-main);
+  --f-mono:    var(--font-wide);
 
   /* Scale */
   --nav-h:  64px;

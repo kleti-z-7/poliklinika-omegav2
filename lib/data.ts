@@ -4,7 +4,7 @@ export const NAV_LINKS = [
   { href: '#services', label: 'Shërbimet' },
   { href: '#about', label: 'Përse OMEGA' },
   { href: '#journey', label: 'Procesi' },
-  { href: '#locations', label: 'Lokacionet' },
+  { href: '#locations', label: 'Kontakti' },
 ];
 
 export const TRUST_STATS = [
@@ -260,37 +260,12 @@ export const JOURNEY_STEPS = [
 
 export const LOCATIONS = [
   {
-    name: 'Prishtina Qendër',
-    address: 'Rr. Agim Ramadani 22',
+    name: 'Pejë',
+    address: 'Rr. Sadik Cufa, Pejë 30000',
     hours: [
-      { open: true,  text: 'Hën–Sht · 07:00–20:00' },
-      { open: true,  text: 'Diel · 08:00–14:00' },
+      { open: true, text: 'Hën–Die · 07:00–20:00' },
     ],
     isPrimary: true,
-  },
-  {
-    name: 'Prishtina Veri',
-    address: 'Rr. Fehmi Agani 8',
-    hours: [
-      { open: true,  text: 'Hën–Pre · 07:30–18:00' },
-      { open: false, text: 'Shtunë · 08:00–13:00' },
-    ],
-  },
-  {
-    name: 'Gjilan',
-    address: 'Rr. Skënderbeu 14',
-    hours: [
-      { open: true,  text: 'Hën–Pre · 07:30–17:00' },
-      { open: false, text: 'Shtunë · 08:00–13:00' },
-    ],
-  },
-  {
-    name: 'Pejë',
-    address: 'Rr. Mbretëresha Teutë 3',
-    hours: [
-      { open: true,  text: 'Hën–Pre · 07:30–17:00' },
-      { open: false, text: 'Shtunë · 08:00–13:00' },
-    ],
   },
 ];
 

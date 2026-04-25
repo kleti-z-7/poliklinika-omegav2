@@ -50,7 +50,7 @@
   margin-bottom: 12px;
 }
 .content h2 em {
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--c-liquid-glow);
 }

@@ -194,7 +194,7 @@
 }
 :global(.pillar-title em) {
   display: block;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--c-liquid-glow);
 }
@@ -299,7 +299,7 @@
 .quote blockquote {
   font-family: var(--f-display);
   font-size: clamp(19px, 2vw, 28px);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   line-height: 1.6;
   color: var(--c-white);
