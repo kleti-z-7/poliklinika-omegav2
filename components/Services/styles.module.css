@@ -1,20 +1,20 @@
 .services {
-  padding: 64px 32px;
+  padding: 80px 32px;
   max-width: var(--max-w);
   margin: 0 auto;
 }
 
 .shell {
   margin-top: 48px;
-  border: 1px solid rgba(91,143,255,0.14);
-  border-radius: 20px;
+  border: 1px solid var(--c-border-bright);
+  border-radius: var(--r-lg);
   overflow: hidden;
   background: linear-gradient(160deg, rgba(8,28,88,0.7), rgba(4,14,50,0.9));
 }
 
 .tabs {
   display: flex;
-  border-bottom: 1px solid rgba(91,143,255,0.12);
+  border-bottom: 1px solid var(--c-border-mid);
 }
 
 .tab {
@@ -26,7 +26,7 @@
   padding: 18px 12px;
   background: transparent;
   border: none;
-  border-right: 1px solid rgba(91,143,255,0.08);
+  border-right: 1px solid var(--c-border);
   cursor: pointer;
   transition: background 0.2s;
   color: inherit;
@@ -74,7 +74,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  border-right: 1px solid rgba(91,143,255,0.1);
+  border-right: 1px solid var(--c-border-mid);
 }
 
 .panelRight {
@@ -187,14 +187,14 @@
 
 @media (max-width: 900px) {
   .panel { flex-direction: column; }
-  .panelLeft { border-right: none; border-bottom: 1px solid rgba(91,143,255,0.1); }
+  .panelLeft { border-right: none; border-bottom: 1px solid var(--c-border-mid); }
   .panelRight { width: 100%; }
   .panelTests { flex-direction: row; flex-wrap: wrap; gap: 6px; }
-  .testItem { border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 4px 10px; }
+  .testItem { border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-xs); padding: 4px 10px; }
   .testItem:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
 }
 @media (max-width: 640px) {
-  .services { padding: 80px 20px; }
+  .services { padding: 64px 20px; }
 }
 @media (max-width: 600px) {
   .tabs { flex-wrap: wrap; }

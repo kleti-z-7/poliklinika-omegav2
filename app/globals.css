@@ -31,9 +31,25 @@
 
   /* Scale */
   --nav-h:  64px;
-  --r-card: 14px;
-  --r-btn:  6px;
   --max-w:  1320px;
+
+  /* Border-radius scale */
+  --r-xs:   4px;   /* chips, small tags */
+  --r-sm:   8px;   /* icon containers, social links, small UI */
+  --r-btn:  8px;   /* all buttons */
+  --r-card: 16px;  /* cards, panels, shells */
+  --r-lg:   20px;  /* large surfaces, sheet header */
+
+  /* Shadow scale */
+  --shadow-sm:   0 4px 16px rgba(0,0,0,0.28);
+  --shadow-md:   0 8px 32px rgba(11,42,107,0.28);
+  --shadow-lg:   0 20px 60px rgba(0,0,0,0.45);
+  --shadow-glow: 0 0 32px rgba(30,86,208,0.40);
+
+  /* Backdrop-blur scale */
+  --blur-sm:  blur(12px);
+  --blur-md:  blur(20px);
+  --blur-lg:  blur(24px);
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

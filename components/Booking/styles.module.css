@@ -1,5 +1,5 @@
 .booking {
-  padding: 60px 80px;
+  padding: 80px 32px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -114,7 +114,6 @@
   grid-column: span 2;
   justify-content: center;
   padding: 16px;
-  font-size: 14px;
   margin-top: 8px;
 }
 
@@ -219,7 +218,7 @@
   left: 0;
   right: 0;
   background: #0f1e3d;
-  border: 1px solid rgba(91,143,255,0.25);
+  border: 1px solid var(--c-border-bright);
   border-radius: var(--r-btn);
   padding: 6px;
   list-style: none;
@@ -285,5 +284,5 @@
   .content { text-align: center; }
 }
 @media (max-width: 640px) {
-  .booking { padding: 80px 20px; }
+  .booking { padding: 64px 20px; }
 }

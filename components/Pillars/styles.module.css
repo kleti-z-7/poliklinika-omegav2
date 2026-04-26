@@ -1,38 +1,43 @@
 .pillars {
-  padding: 140px 32px 120px;
+  padding: 120px 32px 120px;
   overflow: hidden;
   position: relative;
-  background: var(--c-navy);
+  background: #E5E7EB;
 }
 
-.pillars::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 700px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(30,86,208,0.22) 0%, transparent 65%);
-  pointer-events: none;
-  filter: blur(1px);
-}
 .pillars::after {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(91,143,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(91,143,255,0.025) 1px, transparent 1px);
+    linear-gradient(rgba(11,42,107,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,42,107,0.015) 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 20%, transparent 100%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .header {
   max-width: var(--max-w);
   margin: 0 auto 80px;
   padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Override global dark-mode section header colors for this light-bg section */
+.header :global(.section-eyebrow) {
+  color: var(--c-navy-light);
+}
+.header :global(.eyebrow-line) {
+  background: var(--c-navy-light);
+}
+.header :global(.section-title) {
+  color: var(--c-navy);
+}
+.header :global(.section-title em) {
+  color: var(--c-navy-light);
 }
 
 /* pillar and p-revealed are queried/toggled by usePillars hook — must be global */
@@ -49,14 +54,15 @@
 
 :global(.pillar) {
   position: relative;
-  border-radius: 20px;
-  border: 1px solid rgba(91,143,255,0.1);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-border-bright);
   background: linear-gradient(145deg,
-    rgba(255,255,255,0.04) 0%,
-    rgba(91,143,255,0.02) 100%
+    #0B2A6B 0%,
+    #071A4A 100%
   );
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    var(--shadow-md),
+    0 1px 0 rgba(91,143,255,0.14) inset;
   padding: 40px 36px;
   overflow: hidden;
   cursor: pointer;
@@ -84,15 +90,15 @@
 :global(.pillar):nth-child(5) { grid-column: span 9; grid-row: 2; }
 
 :global(.pillar):hover {
-  border-color: rgba(91,143,255,0.32);
+  border-color: rgba(91,143,255,0.5);
   background: linear-gradient(145deg,
-    rgba(30,86,208,0.12) 0%,
-    rgba(91,143,255,0.06) 100%
+    #1E56D0 0%,
+    #0B2A6B 100%
   );
   box-shadow:
-    0 32px 80px rgba(0,0,0,0.35),
-    0 0 0 1px rgba(91,143,255,0.2) inset,
-    0 0 60px rgba(30,86,208,0.1);
+    var(--shadow-lg),
+    0 0 0 1px rgba(91,143,255,0.3) inset,
+    0 0 48px rgba(30,86,208,0.18);
   transform: translateY(-4px) scale(1.005);
 }
 
@@ -166,8 +172,8 @@
 :global(.pillar-icon) {
   width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
-  border-radius: 12px;
-  border: 1px solid rgba(91,143,255,0.2);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--c-border-bright);
   background: rgba(91,143,255,0.08);
   color: var(--c-liquid);
   margin-bottom: 28px;
@@ -194,7 +200,7 @@
 }
 :global(.pillar-title em) {
   display: block;
-  font-style: normal;
+  font-style: italic;
   font-weight: 300;
   color: var(--c-liquid-glow);
 }
@@ -211,7 +217,7 @@
 :global(.pillar-metric) {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid rgba(91,143,255,0.1);
+  border-top: 1px solid var(--c-border);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -266,7 +272,7 @@
   max-width: var(--max-w);
   margin: 64px auto 0;
   padding: 48px 32px 24px;
-  border-top: 1px solid var(--c-border);
+  border-top: 1px solid rgba(11, 42, 107, 0.07);
   display: flex;
   align-items: center;
   gap: 48px;
@@ -292,24 +298,25 @@
   flex: 1;
 }
 .quoteMark {
-  width: 42px;
-  color: var(--c-liquid);
-  opacity: 0.35;
+  width: 52px;
+  color: var(--c-blue);
+  opacity: 0.5;
 }
 .quote blockquote {
   font-family: var(--f-display);
   font-size: clamp(19px, 2vw, 28px);
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
-  color: var(--c-white);
+  color: var(--c-navy);
   max-width: 560px;
 }
 .quote cite {
   font-family: var(--f-mono);
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.18em;
-  color: var(--c-silver-dim);
+  color: var(--c-navy);
 }
 
 @media (max-width: 1100px) {

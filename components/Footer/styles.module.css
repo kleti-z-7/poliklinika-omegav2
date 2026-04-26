@@ -51,7 +51,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--c-border-mid);
-  border-radius: 8px;
+  border-radius: var(--r-sm);
   color: var(--c-silver);
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }

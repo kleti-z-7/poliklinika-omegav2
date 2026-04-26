@@ -42,8 +42,8 @@ export default function Hero() {
             </h1>
 
             <p className={styles.headlineSub}>
-              Rezultate ditën e njëjtë — laborator i akredituar ndërkombëtarisht
-              me mbi 27 vjet ekselencë klinike.
+              Laborator i akredituar ndërkombëtarisht me mbi 27 vjet ekselencë klinike —
+              rezultate të shpejta për shumicën e analizave.
             </p>
 
           </div>

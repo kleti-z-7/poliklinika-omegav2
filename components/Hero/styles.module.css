@@ -113,14 +113,14 @@
   opacity: 0;
   transform: translateY(108%);
   font-family: var(--f-display);
-  font-size: clamp(38px, 4.4vw, 72px);
+  font-size: clamp(34px, 4vw, 64px);
   font-weight: 900;
   color: var(--c-white);
 }
 
 .hlEm {
   font-style: normal;
-  color: var(--c-liquid);
+  color: var(--c-white);
 }
 
 .hl1 .hlWord { animation: hiWordUp 1.0s var(--ease-out-expo) 0.18s forwards; }
@@ -256,7 +256,7 @@
 @media (max-width: 600px) {
   .inner { padding: calc(var(--nav-h) + 14px) 22px 28px; }
   .stageLeft { width: 100%; }
-  .hlWord { font-size: clamp(34px, 9.5vw, 54px); }
+  .hlWord { font-size: clamp(30px, 9vw, 50px); }
   .scroll { display: none; }
   .bottomSpacer { height: 16px; }
   .doctor { opacity: 0; height: 45%; }

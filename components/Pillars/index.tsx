@@ -143,14 +143,11 @@ export default function Pillars() {
           <img src="/Omega Behance Presentation-28.svg" alt="" className={styles.quoteCharacterImg} />
         </div>
         <div className={styles.quoteContent}>
-          <svg className={styles.quoteMark} viewBox="0 0 40 28" fill="none">
-            <path d="M0 28C0 14.745 10.745 4 24 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <circle cx="12" cy="22" r="6" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M24 28C24 14.745 34.745 4 48 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <circle cx="36" cy="22" r="6" stroke="currentColor" strokeWidth="1.5" />
+          <svg className={styles.quoteMark} viewBox="0 0 48 36" fill="currentColor">
+            <path d="M0 36V22.5C0 14.8 4.2 8.4 12.6 3.3L15 7.2C10.2 10 7.8 13.4 7.8 17.4H14.4V36H0ZM26.4 36V22.5C26.4 14.8 30.6 8.4 39 3.3L41.4 7.2C36.6 10 34.2 13.4 34.2 17.4H40.8V36H26.4Z" />
           </svg>
           <blockquote>&ldquo;Rezultatet e OMEGA-s i dhanë diagnozës sime një nivel besueshmërie që nuk e kam ndjerë në asnjë laborator tjetër.&rdquo;</blockquote>
-          <cite>— Dr. A. Berisha, Kardiolog</cite>
+          <cite>— Dr. Bujar Gruda</cite>
         </div>
       </div>
     </section>

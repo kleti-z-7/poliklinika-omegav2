@@ -91,7 +91,7 @@
 }
 :global(.btn-primary):hover {
   background: var(--c-blue-bright);
-  box-shadow: 0 0 32px rgba(30,86,208,0.45), 0 8px 24px rgba(0,0,0,0.25);
+  box-shadow: var(--shadow-glow), var(--shadow-sm);
   transform: translateY(-2px);
 }
 :global(.btn-primary svg) { width: 16px; height: 16px; flex-shrink: 0; }
@@ -216,7 +216,7 @@
 
 :global(.cred-slab) {
   position: relative;
-  border-radius: 12px;
+  border-radius: var(--r-card);
   border: 1px solid var(--c-border-mid);
   background: linear-gradient(170deg,
     rgba(255,255,255,0.032) 0%,
