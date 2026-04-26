@@ -229,19 +229,6 @@ export default function Locations() {
             </div>
           </div>
         </div>
-
-        <div className={`${styles.homeVisit} reveal-up`}>
-          <div className={styles.hvIcon}>
-            <svg viewBox="0 0 48 48" fill="none">
-              <path d="M24 8L8 20v22h12v-10h8v10h12V20L24 8z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-            </svg>
-          </div>
-          <div className={styles.hvText}>
-            <h4>Vizitë në Shtëpi</h4>
-            <p>Ekipi ynë mobil i flebotomisë vjen te ti. Shërbim premium marrjeje mostrash për klientë korporativë, pacientë në shtëpi dhe ata që e vlerësojnë kohën e tyre.</p>
-          </div>
-          <a href="#booking" className="btn-primary">Rezervo Vizitën</a>
-        </div>
       </div>
 
       <MobileSheet open={sheetOpen} onClose={() => setSheetOpen(false)} />

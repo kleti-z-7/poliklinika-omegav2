@@ -279,8 +279,7 @@ export const FOOTER_LINKS: Record<string, { label: string; href: string }[]> = {
     { label: 'Gjenetikë & NGS', href: '#services' },
   ],
   pacientet: [
-    { label: 'Rezervo Online',      href: '#booking'   },
-    { label: 'Vizita në Shtëpi',    href: '#locations' },
+    { label: 'Rezervo Online',        href: '#booking'  },
     { label: 'Përgatitja për Testin', href: '#journey'  },
   ],
   kompania: [
