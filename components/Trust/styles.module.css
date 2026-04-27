@@ -136,6 +136,7 @@
   border-top: 1px solid var(--c-border);
   border-bottom: 1px solid var(--c-border);
   background: var(--c-navy);
+  overflow: hidden;
 }
 
 .inner {
@@ -161,7 +162,7 @@
 
 .num {
   font-family: var(--f-display);
-  font-size: clamp(34px, 3.8vw, 52px);
+  font-size: clamp(28px, 3.8vw, 52px);
   font-weight: 800;
   color: var(--c-white);
   line-height: 1;
@@ -445,26 +446,33 @@
 }
 
 @media (max-width: 1100px) {
-  .inner { grid-template-columns: repeat(5, 1fr); }
+  /* 5 stats, 4 dividers hidden — 5-col grid fits all stats in one row */
+  .inner { grid-template-columns: repeat(5, 1fr); gap: 0; }
   .divider { display: none; }
-  .item { border-bottom: 1px solid var(--c-border); padding-bottom: 24px; }
+  .item { border-bottom: 1px solid var(--c-border); padding: 20px 8px 24px; }
   :global(.cred-wall) { grid-template-columns: repeat(3, 1fr); min-height: auto; }
   :global(.cred-slab--anchor) { grid-column: auto; }
 }
-@media (max-width: 900px) {
-  .inner { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 768px) {
+  /* 3-col: first row 3 stats, second row 2 stats centered */
+  .inner { grid-template-columns: repeat(3, 1fr); gap: 0; }
   .trust { padding: 48px 24px; }
+  .num { font-size: clamp(26px, 5.5vw, 40px); }
 }
-@media (max-width: 640px) {
-  .inner { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 540px) {
+  /* 2-col grid, border-bottom separators only */
+  .inner { grid-template-columns: repeat(2, 1fr); gap: 0; }
   .trust { padding: 40px 20px; }
   .credWallWrap { margin-top: 48px; }
+  .num { font-size: clamp(24px, 7vw, 36px); }
   :global(.cred-wall) { grid-template-columns: 1fr 1fr; }
   :global(.cred-slab--anchor) { grid-column: 1 / -1; }
 }
 @media (max-width: 400px) {
-  .inner { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .item { padding: 12px 4px; }
+  .trust { padding: 36px 16px; }
+  .item { padding: 16px 8px 20px; }
+  .num { font-size: clamp(20px, 6.5vw, 28px); }
+  .label { font-size: 8px; letter-spacing: 0.12em; }
   :global(.cred-wall) { grid-template-columns: 1fr; }
   :global(.cred-slab--anchor) { grid-column: auto; }
 }

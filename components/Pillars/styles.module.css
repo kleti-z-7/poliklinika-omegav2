@@ -280,10 +280,10 @@
 
 .quoteCharacter {
   flex-shrink: 0;
-  width: 700px;
+  width: clamp(280px, 40%, 600px);
   position: relative;
   align-self: center;
-  margin-left: -120px;
+  margin-left: -60px;
 }
 .quoteCharacterImg {
   width: 100%;
@@ -339,9 +339,9 @@
   :global(.pillar):nth-child(5) { grid-column: span 2; }
   :global(.pillar):nth-child(5) :global(.pillar-inner) { flex-direction: column; }
   :global(.pillar):nth-child(5) :global(.pillar-right) { align-items: flex-start; }
-  .quote { flex-direction: column; align-items: center; }
-  .quoteCharacter { width: 220px; }
-  .quoteContent { text-align: center; align-items: center; }
+  .quote { flex-direction: column; align-items: center; gap: 0; }
+  .quoteCharacter { width: clamp(180px, 55vw, 300px); margin-left: 0; }
+  .quoteContent { text-align: center; align-items: center; padding: 0 20px 24px; }
 }
 @media (max-width: 640px) {
   .pillars { padding: 80px 20px 60px; }
@@ -356,12 +356,13 @@
   :global(.pillar):nth-child(5) :global(.pillar-right) { align-items: flex-start; }
   :global(.pillar) { padding: 32px 28px; }
   :global(.pillar-bg-num) { font-size: 80px; }
-  .quote { padding: 40px 20px; }
-  .quoteCharacter { width: 180px; margin-left: 0; }
+  .quote { padding: 24px 0 0; }
+  .quoteCharacter { width: clamp(160px, 50vw, 240px); margin-left: 0; }
+  .quoteContent { padding: 0 0 24px; }
 }
 @media (max-width: 400px) {
   .pillars { padding: 64px 16px 48px; }
   :global(.pillar) { padding: 28px 22px; }
   :global(.pillar-metric) { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .quoteCharacter { width: 140px; }
+  .quoteCharacter { width: clamp(140px, 45vw, 180px); }
 }

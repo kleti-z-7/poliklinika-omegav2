@@ -83,7 +83,6 @@ export default function Journey() {
                 <div className="jt-card-icon"><JourneyIcon icon={step.icon} /></div>
                 <h4>{step.title}</h4>
                 <p>{step.desc}</p>
-                <div className="jt-time">{step.time}</div>
               </div>
             </div>
           ))}

@@ -110,10 +110,6 @@ export default function Trust() {
               <div className="cred-slab-content">
                 <div className="cred-slab-top">
                   <span className="cred-slab-idx">{cred.idx}</span>
-                  <div className="cred-slab-live">
-                    <span className="cred-live-dot" />
-                    <span>{cred.isAnchor ? 'AKTIV · 2024' : 'AKTIV'}</span>
-                  </div>
                 </div>
                 <div className="cred-slab-emblem">
                   <CredSlabIcon icon={cred.icon} />
