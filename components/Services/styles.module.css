@@ -187,16 +187,24 @@
 
 @media (max-width: 900px) {
   .panel { flex-direction: column; }
-  .panelLeft { border-right: none; border-bottom: 1px solid var(--c-border-mid); }
-  .panelRight { width: 100%; }
+  .panelLeft { border-right: none; border-bottom: 1px solid var(--c-border-mid); padding: 32px 28px; }
+  .panelRight { width: 100%; padding: 28px 28px; }
   .panelTests { flex-direction: row; flex-wrap: wrap; gap: 6px; }
   .testItem { border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-xs); padding: 4px 10px; }
   .testItem:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
 }
 @media (max-width: 640px) {
   .services { padding: 64px 20px; }
+  .panelLeft { padding: 24px 20px; }
+  .panelRight { padding: 20px 20px; }
+  .panelTitle { font-size: 18px; }
 }
 @media (max-width: 600px) {
   .tabs { flex-wrap: wrap; }
-  .tab { flex: 1 1 33%; }
+  .tab { flex: 1 1 33%; min-width: 0; }
+  .tabLabel { font-size: 11px; }
+}
+@media (max-width: 400px) {
+  .tab { flex: 1 1 50%; }
+  .services { padding: 56px 16px; }
 }

@@ -546,13 +546,26 @@
   .layout { gap: 48px; }
 }
 @media (max-width: 860px) {
-  .layout { grid-template-columns: 1fr; gap: 48px; }
+  .layout { grid-template-columns: 1fr; gap: 40px; }
   .heading { font-size: clamp(40px, 7vw, 60px); }
   .cardWrap { max-width: 480px; margin: 0 auto; width: 100%; }
   .homeVisit { flex-direction: column; text-align: center; padding: 28px; }
+  .hvText h4 { font-size: 16px; }
 }
 @media (max-width: 640px) {
   .locations { padding: 64px 20px; }
   .heading { font-size: 44px; }
   .mapPreview { height: 140px; }
+  .homeVisit { padding: 22px; gap: 18px; }
+  .hvIcon svg { width: 32px; height: 32px; }
+}
+@media (max-width: 480px) {
+  .locations { padding: 56px 16px; }
+  .heading { font-size: 36px; }
+  .cardWrap { max-width: 100%; }
+  :global(.loc-card-inner) { padding: 18px 18px 16px; }
+  .mapPreview { height: 120px; }
+}
+@media (max-width: 400px) {
+  .heading { font-size: 32px; }
 }

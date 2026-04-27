@@ -282,7 +282,15 @@
   .doctor { display: none; }
   .inner { flex-direction: column; }
   .content { text-align: center; }
+  .meta { justify-content: center; }
 }
 @media (max-width: 640px) {
   .booking { padding: 64px 20px; }
+  .meta { flex-direction: column; align-items: center; gap: 10px; }
+  .metaSep { display: none; }
+}
+@media (max-width: 400px) {
+  .booking { padding: 56px 16px; }
+  .content h2 { font-size: 28px; }
+  .form { gap: 12px; }
 }

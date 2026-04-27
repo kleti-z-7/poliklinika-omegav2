@@ -169,4 +169,10 @@
 }
 @media (max-width: 640px) {
   .inner { padding: 0 20px; }
+  .wordmark { height: 72px; }
+}
+@media (max-width: 400px) {
+  .inner { padding: 0 16px; }
+  .wordmark { height: 60px; left: 16px; }
+  .mobileMenu ul { padding: 0 20px; }
 }

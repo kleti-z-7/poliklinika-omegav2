@@ -181,10 +181,25 @@
   50% { opacity: 0.4; transform: scale(0.6); }
 }
 
+@media (max-width: 768px) {
+  .journey { padding: 80px 24px 64px; }
+  :global(.jt-step) { gap: 22px; }
+  :global(.jt-card) { padding: 26px 24px; }
+}
 @media (max-width: 640px) {
   .journey { padding: 64px 20px; }
   :global(.jt-node) { left: -34px; width: 28px; height: 28px; font-size: 8px; }
   :global(.jt-card) { padding: 22px 20px; }
   :global(.jt-card h4) { font-size: 15px; }
   :global(.jt-card p) { font-size: 13px; }
+  .header { margin-bottom: 56px; }
+}
+@media (max-width: 400px) {
+  .journey { padding: 56px 16px; }
+  :global(.jt-step) { gap: 16px; }
+  :global(.jt-col-line) { width: 28px; }
+  :global(.jt-node) { width: 26px; height: 26px; font-size: 7.5px; }
+  :global(.jt-card) { padding: 18px 16px; margin-bottom: 32px; }
+  :global(.jt-card h4) { font-size: 14px; }
+  :global(.jt-card p) { font-size: 12.5px; }
 }

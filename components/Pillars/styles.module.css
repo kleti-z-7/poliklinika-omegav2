@@ -357,4 +357,11 @@
   :global(.pillar) { padding: 32px 28px; }
   :global(.pillar-bg-num) { font-size: 80px; }
   .quote { padding: 40px 20px; }
+  .quoteCharacter { width: 180px; margin-left: 0; }
+}
+@media (max-width: 400px) {
+  .pillars { padding: 64px 16px 48px; }
+  :global(.pillar) { padding: 28px 22px; }
+  :global(.pillar-metric) { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .quoteCharacter { width: 140px; }
 }
